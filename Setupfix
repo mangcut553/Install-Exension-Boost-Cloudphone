@@ -4,6 +4,17 @@ if [ -e "/data/data/com.termux/files/home/storage" ]; then
 	rm -rf /data/data/com.termux/files/home/storage
 fi
 termux-setup-storage
+sleep 2
+
 curl -Ls "https://www.dropbox.com/scl/fi/zj87632mk2l7z44g2026e/termuxpy313.tar.gz?rlkey=tmtyptvtys2q2uq9yed92zwxj&st=qex8s5wz&dl=1" -o ~/termuxpy313.tar.gz
+
+if [ -s ~/termuxpy313.tar.gz ]; then
+    tar -xzvf ~/termuxpy313.tar.gz -C /data/data/com.termux/files/usr
+    termux-reload-settings
+    rm -f ~/termuxpy313.tar.gz
+else
+    echo "Tải file thất bại."
+    exit 1
+fi
+
 curl -Ls "https://cdn.quanghuynopro.com/store/main.py" -o /sdcard/Download/shouko.py
-tar -xzvf ~/storage/downloads/termuxpy313.tar.gz -C /data/data/com.termux/files/usr
