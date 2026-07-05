@@ -13,7 +13,7 @@ if [ -s ~/termuxpy313.tar.gz ]; then
     termux-reload-settings
     rm -f ~/termuxpy313.tar.gz
 else
-    echo "Tải file thất bại."
+    echo "Me M Beo"
     exit 1
 fi
 
